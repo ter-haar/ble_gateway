@@ -4,13 +4,6 @@ import redis
 
 import config
 
-# publish.single(
-#     payload='scan',
-#     topic='{}/{}'.format(config.MQTT_TOPIC, 'status'),
-#     hostname=config.MQTT_HOST,
-#     port=config.MQTT_PORT
-# )
-
 # scan for ble devices
 scanner = Scanner()
 devices = scanner.scan(10.0)
@@ -33,7 +26,7 @@ deleted_ids = [id for id in r_ids if id not in ids]
 if added_ids:
     # publish list of added ids
     msgs = [
-        {'topic': '{}/{}'.format(config.MQTT_TOPIC, id), 'payload': 'on'}
+        {'topic': '{}/{}'.format(config.MQTT_TOPIC, id), 'payload': 'home'}
         for id in added_ids
     ]
     publish.multiple(msgs, hostname=config.MQTT_HOST, port=config.MQTT_PORT)
@@ -41,7 +34,7 @@ if added_ids:
 if deleted_ids:
     # publish list of deleted ids
     msgs = [
-        {'topic': '{}/{}'.format(config.MQTT_TOPIC, id), 'payload': 'off'}
+        {'topic': '{}/{}'.format(config.MQTT_TOPIC, id), 'payload': 'not_home'}
         for id in deleted_ids
     ]
     publish.multiple(msgs, hostname=config.MQTT_HOST, port=config.MQTT_PORT)
