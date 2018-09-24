@@ -1,5 +1,5 @@
 # Bluetooth LE to MQTT gateway
-##iTAG scanner based on Python
+## iTAG scanner based on Python
 
 -------------------
 
@@ -55,9 +55,7 @@ pip install redis
 
 -------------------
 
-**
-Before start scanning rename config.sample.py to config.py, and set proper mqtt server credentials
-**
+** Before start scanning rename config.sample.py to config.py, and set proper mqtt server credentials **
 
 -------------------
 
