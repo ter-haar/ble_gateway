@@ -15,7 +15,7 @@ What would we need?
 * Raspberry Pi equipped with Bluetooth low energy. I guess the cheapest and smallest is Raspberry Pi Zero W, but any other would do the work.
 * iTAG with Bluetooth LE. It's cheap and popular - they are sold commonly as "key localizator". One of them I have received on polish Pycon conference.
 
-![Image description](images/IMG_211526jpg)
+![Image description](images/IMG_211526.jpg "My configuration")
 
 ###
 Let's start with installing Raspbian on Raspberry Pi. Everything is poperly documented on www.raspberrypi.org, so I will skip this part. Of course version "Raspbian Stretch Lite' is perfect for us - we do not need GUI.
@@ -50,7 +50,8 @@ sudo apt-get install redis-server
 pip install redis
 ```
 
-### Now we can start scanning
+###
+Now we can start scanning
 ```
 watch -n10 python gateway.p
 ```
