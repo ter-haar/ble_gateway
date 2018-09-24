@@ -1,8 +1,6 @@
 # Bluetooth LE to MQTT gateway
 ## iTAG scanner based on Python
 
--------------------
-
 Why would we have to do something, which is already present in Home Assistant (Bluetooth LE Tracker)?
 
 * there are issues with performance, from Bluetooth LE Tracker documentation:
@@ -61,7 +59,7 @@ pip install redis
 
 Now we can start scanning
 ```
-watch -n10 python gateway.p
+watch -n10 python gateway.py
 ```
 
 This looks mqtt when iTAG will show up in range:
