@@ -45,10 +45,7 @@ Finally install mosquitto and redis:
 
 ```
 sudo apt-get install mosquitto-clients
-pip install paho-mqtt
-
 sudo apt-get install redis-server
-pip install redis
 ```
 
 -------------------
@@ -73,3 +70,46 @@ home/ble/id/0c:8c:dc:22:4b:69 not_home
 ```
 
 The only thing that we need, is to configure MQTT Device Tracker in Home Assitant in order to poperly interprete messages sent by MQTT.
+
+-------------------
+
+(Optional) Running as a daemon with systemctl
+
+To run gateway as daemon (in background) and start it automatically on boot we will use systemctl:
+
+* edit WorkingDirectory section in file blegateway.service
+
+copy file blegateway.service to /etc/systemd/system
+
+```
+cp blegateway.service /etc/systemd/system
+```
+
+Verify that the configuration works:
+
+```
+# Start
+sudo systemctl start blegateway
+
+# Show status
+systemctl status blegateway
+```
+
+To start gateway automatically on boot execute:
+
+```
+sudo systemctl enable blegateway
+```
+
+Some tips that can be handy later:
+
+```
+# Stopping
+sudo systemctl start blegateway
+
+# Starting
+sudo systemctl stop blegateway
+
+#V iew the log
+sudo journalctl -u blegateway -f
+```

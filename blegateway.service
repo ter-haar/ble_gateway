@@ -1,0 +1,15 @@
+[Unit]
+Description=blegateway
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python gateway.py
+WorkingDirectory=/home/pi/ble_gateway
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=20s
+User=pi
+
+[Install]
+WantedBy=multi-user.target
