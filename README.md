@@ -73,13 +73,12 @@ The only thing that we need, is to configure MQTT Device Tracker in Home Assitan
 
 -------------------
 
-(Optional) Running as a daemon with systemctl
+### (Optional) Running as a daemon with systemctl
 
 To run gateway as daemon (in background) and start it automatically on boot we will use systemctl:
 
 * edit WorkingDirectory section in file blegateway.service
-
-copy file blegateway.service to /etc/systemd/system
+* copy file blegateway.service to /etc/systemd/system
 
 ```
 cp blegateway.service /etc/systemd/system
@@ -110,6 +109,6 @@ sudo systemctl start blegateway
 # Starting
 sudo systemctl stop blegateway
 
-#V iew the log
+# View the log
 sudo journalctl -u blegateway -f
 ```
